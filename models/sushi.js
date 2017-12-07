@@ -1,8 +1,12 @@
 var orm = require('../config/orm.js');
 
-orm.selectAll();
-orm.insertOne();
-orm.updateOne();
+var sushi = {
+    all: function (callback) {
+        orm.selectAll(function (data) {
+            callback(data);
+        });
+    }
+}
 
 // export the result of these calls
-module.exports = 'some data after orm function';
+module.exports = sushi;
