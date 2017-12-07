@@ -1,6 +1,12 @@
 <ul>
     {{#each allSushi}}
-        <li>{{id}}</li>
-        <li>{{sushi_name}}</li>
+        <li>{{id}}. {{sushi_name}}</li>
     {{/each}}
 </ul>
+
+<form action="/add" method = "post">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="New sushi" id='new-sushi'>
+  </div>
+  <button type="submit" class="btn btn-default" id='add-btn'>Add new sushi!</button>
+</form>

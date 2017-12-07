@@ -11,4 +11,12 @@ router.get('/', function (req, res) {
     })
 });
 
+router.post('/add', function (req, res) {
+    var newSushiName = req.body.sushiName;
+    console.log(newSushiName);
+    sushi.insert(newSushiName, function (data) {
+        res.redirect('/');
+    })
+})
+
 module.exports = router;

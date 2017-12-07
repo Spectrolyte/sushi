@@ -11,13 +11,14 @@ var orm = {
             callback(data);
         })
     },
-    insertOne: function (sushiName) {
+    insertOne: function (sushiName, callback) {
         var query = 'INSERT INTO sushi (sushi_name) VALUES (?)';
         connection.query(query, [sushiName], function (error, data) {
             if (error) {
                 console.log(error);
                 return;
             }
+            callback(sushiName, data);
         })
     },
     updateOne: function (devoured, sushiId) {

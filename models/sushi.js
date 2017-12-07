@@ -5,6 +5,11 @@ var sushi = {
         orm.selectAll(function (data) {
             callback(data);
         });
+    },
+    insert: function (sushiName, callback) {
+        orm.insertOne(sushiName, function (data) {
+            callback(data);
+        });
     }
 }
 
