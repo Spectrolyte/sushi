@@ -15,7 +15,8 @@ router.post('/add', function (req, res) {
     var newSushiName = req.body.sushiName;
     console.log(newSushiName);
     sushi.insert(newSushiName, function (data) {
-        res.redirect('/');
+        // data gives back affectedRows, changedRows, etc.
+        // console.log(data);
     })
 })
 

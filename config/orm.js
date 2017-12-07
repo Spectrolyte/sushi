@@ -18,7 +18,7 @@ var orm = {
                 console.log(error);
                 return;
             }
-            callback(sushiName, data);
+            callback(data);
         })
     },
     updateOne: function (devoured, sushiId) {
