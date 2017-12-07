@@ -4,9 +4,26 @@ $(function () {
         var newSushi = {
             sushiName: $('#new-sushi').val().trim()
         }
-        $.post('/add', newSushi, function (){
+        $.post('/add', newSushi, function () {
             console.log('data added');
             location.reload();
-        })
-    })
+        });
+    });
+    $('.update-btn').click(function (event) {
+        event.preventDefault();
+        var updateSushi = {
+            sushiId: $(this).attr('sushi-id'),
+            devoured: $(this).attr('devoured')
+        }
+        console.log(updateSushi);
+        $.ajax({
+            url: '/update',
+            type: 'PUT',
+            data: updateSushi,
+            success: function (data) {
+                console.log('devoured');
+                location.reload(true);
+            }
+        });
+    });
 })

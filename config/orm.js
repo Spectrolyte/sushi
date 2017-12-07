@@ -21,14 +21,22 @@ var orm = {
             callback(data);
         })
     },
-    updateOne: function (devoured, sushiId) {
+    updateOne: function (devoured, sushiId, callback) {
+        var eaten;
+        if (devoured == true) { 
+            eaten = false;
+        }
+        else if (devoured == false) {
+            eaten = true;
+        }
         var query = 'UPDATE sushi SET devoured = ? WHERE id = ?';
-        connection.query(query, [devoured, sushiId], function (error, data) {
+        connection.query(query, [eaten, sushiId], function (error, data) {
             if (error) {
                 console.log(error);
                 return;
             }
-        })
+            callback(data);
+        });
     }
 };
 

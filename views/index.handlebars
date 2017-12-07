@@ -1,6 +1,7 @@
 <ul>
     {{#each allSushi}}
         <li>{{id}}. {{sushi_name}}</li>
+        <button class="btn btn-danger update-btn" sushi-id={{id}} devoured={{devoured}}>Devour it!</button>
     {{/each}}
 </ul>
 

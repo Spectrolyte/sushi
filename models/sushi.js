@@ -10,6 +10,11 @@ var sushi = {
         orm.insertOne(sushiName, function (data) {
             callback(data);
         });
+    },
+    update: function (devoured, sushiId, callback) {
+        orm.updateOne(devoured, sushiId, function (data) {
+            callback(data);
+        });
     }
 }
 
