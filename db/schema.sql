@@ -3,7 +3,7 @@ USE sushi_db;
 
 CREATE TABLE sushi(
 	id INT AUTO_INCREMENT,
-	sushi_name VARCHAR(50),
+	sushi_name VARCHAR(50) NOT NULL,
 	devoured BOOLEAN DEFAULT FALSE,
 	DATE TIMESTAMP,
 	PRIMARY KEY (id)

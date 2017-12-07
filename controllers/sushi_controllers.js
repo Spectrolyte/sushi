@@ -31,4 +31,11 @@ router.put('/update', function (req, res) {
     });
 });
 
+router.delete('/delete', function (req, res) {
+    var sushiId = req.body.sushiId;
+    sushi.delete(sushiId, function (data) {
+        res.end();
+    })
+})
+
 module.exports = router;

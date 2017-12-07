@@ -37,6 +37,16 @@ var orm = {
             }
             callback(data);
         });
+    },
+    deleteOne: function (sushiId, callback) {
+        var query = 'DELETE FROM sushi WHERE id = ?';
+        connection.query(query, [sushiId], function (error, data) {
+            if (error) {
+                console.log(error);
+                return;
+            }
+            callback(data);
+        })
     }
 };
 

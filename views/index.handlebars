@@ -1,18 +1,22 @@
-<div class='row text-right'>
-  <div class='col-md-3'></div>
-  <div class='col-md-3' id='to-eat'>
+<div class='row text-center'>
+  <div class='col-md-2'></div>
+  <div class='col-md-4' id='to-eat'>
       {{#each toEat}}
-        <p>{{id}}. {{sushi_name}} <button class="btn btn-success update-btn" sushi-id={{id}} devoured={{devoured}}><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button></p>
-        <hr>
+        <p>{{sushi_name}}
+          <button class="btn btn-success update-btn" sushi-id={{id}} devoured={{devoured}}><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+          <button class="btn btn-danger delete-btn" sushi-id={{id}}><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        </p>
       {{/each}}
   </div>
-  <div class='col-md-3' id='eaten'>
+  <div class='col-md-4' id='eaten'>
       {{#each eaten}}
-        <p>{{id}}. {{sushi_name}} <button class="btn btn-danger update-btn" sushi-id={{id}} devoured={{devoured}}><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></p>
-        <hr>
+        <p>{{sushi_name}}
+          <button class="btn btn-warning update-btn" sushi-id={{id}} devoured={{devoured}}><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>
+          <button class="btn btn-danger delete-btn" sushi-id={{id}}><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        </p>
       {{/each}}
   </div>
-  <div class='col-md-3'></div>
+  <div class='col-md-2'></div>
 </div>
 
 <div class='row text-center'>

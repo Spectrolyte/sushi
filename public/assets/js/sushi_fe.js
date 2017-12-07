@@ -26,4 +26,18 @@ $(function () {
             }
         });
     });
-})
+    $('.delete-btn').click(function (event) {
+        event.preventDefault();
+        var deleteSushi = {
+            sushiId: $(this).attr('sushi-id')
+        }
+        $.ajax({
+            url: '/delete',
+            type: 'DELETE',
+            data: deleteSushi,
+            success: function (data) {
+                location.reload(true);
+            }
+        });
+    });
+});

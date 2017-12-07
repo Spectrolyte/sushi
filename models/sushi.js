@@ -25,6 +25,11 @@ var sushi = {
         orm.updateOne(devoured, sushiId, function (data) {
             callback(data);
         });
+    },
+    delete: function (sushiId, callback) {
+        orm.deleteOne(sushiId, function (data) {
+            callback(data);
+        })
     }
 }
 
