@@ -1,0 +1,16 @@
+body {
+    background-color: pink;
+    font-family: 'Delius Unicase', cursive;    
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+#sushi-tray {
+    width: 350px;
+}
+
+.update-btn {
+    margin-left: 20px;
+}

@@ -1,23 +1,29 @@
-<div class='row'>
-  <div class='col-md-6' id='to-eat'>
-    <ul>
-        {{#each toEat}}
-            <li>{{id}}. {{sushi_name}}</li> <button class="btn btn-success update-btn" sushi-id={{id}} devoured={{devoured}}>Devour it!</button>
-        {{/each}}
-    </ul>
+<div class='row text-right'>
+  <div class='col-md-3'></div>
+  <div class='col-md-3' id='to-eat'>
+      {{#each toEat}}
+        <p>{{id}}. {{sushi_name}} <button class="btn btn-success update-btn" sushi-id={{id}} devoured={{devoured}}><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button></p>
+        <hr>
+      {{/each}}
   </div>
-  <div class='col-md-6' id='eaten'>
-    <ul>
-        {{#each eaten}}
-            <li>{{id}}. {{sushi_name}}</li> <button class="btn btn-danger update-btn" sushi-id={{id}} devoured={{devoured}}>Regugitate?!</button>
-        {{/each}}
-    </ul>
+  <div class='col-md-3' id='eaten'>
+      {{#each eaten}}
+        <p>{{id}}. {{sushi_name}} <button class="btn btn-danger update-btn" sushi-id={{id}} devoured={{devoured}}><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></p>
+        <hr>
+      {{/each}}
   </div>
+  <div class='col-md-3'></div>
 </div>
 
-<form action="/add" method = "post">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="New sushi" id='new-sushi'>
+<div class='row text-center'>
+  <div class='col-md-4'></div>
+  <div class='col-md-4'>
+  <form action="/add" method = "post">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="New sushi" id='new-sushi'>
+    </div>
+    <button type="submit" class="btn btn-default" id='add-btn'>Add new sushi!</button>
+  </form>
   </div>
-  <button type="submit" class="btn btn-default" id='add-btn'>Add new sushi!</button>
-</form>
+  <div class='col-md-4'></div>
+</div>

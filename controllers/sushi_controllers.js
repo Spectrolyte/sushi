@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
 
 router.post('/add', function (req, res) {
     var newSushiName = req.body.sushiName;
-    console.log(newSushiName);
+    // console.log(newSushiName);
     sushi.insert(newSushiName, function (data) {
         // data gives back affectedRows, changedRows, etc.
         // console.log(data);
