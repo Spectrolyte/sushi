@@ -1,9 +1,19 @@
-<ul>
-    {{#each allSushi}}
-        <li>{{id}}. {{sushi_name}}</li>
-        <button class="btn btn-danger update-btn" sushi-id={{id}} devoured={{devoured}}>Devour it!</button>
-    {{/each}}
-</ul>
+<div class='row'>
+  <div class='col-md-6' id='to-eat'>
+    <ul>
+        {{#each toEat}}
+            <li>{{id}}. {{sushi_name}}</li> <button class="btn btn-success update-btn" sushi-id={{id}} devoured={{devoured}}>Devour it!</button>
+        {{/each}}
+    </ul>
+  </div>
+  <div class='col-md-6' id='eaten'>
+    <ul>
+        {{#each eaten}}
+            <li>{{id}}. {{sushi_name}}</li> <button class="btn btn-danger update-btn" sushi-id={{id}} devoured={{devoured}}>Regugitate?!</button>
+        {{/each}}
+    </ul>
+  </div>
+</div>
 
 <form action="/add" method = "post">
   <div class="form-group">

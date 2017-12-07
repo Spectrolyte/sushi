@@ -3,9 +3,10 @@ var router = express.Router();
 var sushi = require('../models/sushi.js');
 
 router.get('/', function (req, res) {
-    sushi.all(function(data) {
+    sushi.all(function(toEat, eaten) {
         var hbsobj = {
-            allSushi: data
+            toEat: toEat,
+            eaten: eaten
         }
         res.render('index', hbsobj);
     });
@@ -25,7 +26,7 @@ router.put('/update', function (req, res) {
     var sushiId = req.body.sushiId;
     var devoured = req.body.devoured;
     sushi.update(devoured, sushiId, function (data) {
-        console.log('updated: ' + JSON.stringify(data));
+        // console.log('updated: ' + JSON.stringify(data));
         res.end();
     });
 });

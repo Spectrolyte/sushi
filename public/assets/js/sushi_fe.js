@@ -5,7 +5,7 @@ $(function () {
             sushiName: $('#new-sushi').val().trim()
         }
         $.post('/add', newSushi, function () {
-            console.log('data added');
+            // console.log('data added');
             location.reload();
         });
     });
@@ -15,13 +15,13 @@ $(function () {
             sushiId: $(this).attr('sushi-id'),
             devoured: $(this).attr('devoured')
         }
-        console.log(updateSushi);
+       // console.log(updateSushi);
         $.ajax({
             url: '/update',
             type: 'PUT',
             data: updateSushi,
             success: function (data) {
-                console.log('devoured');
+                // console.log('devoured');
                 location.reload(true);
             }
         });
