@@ -1,6 +1,8 @@
 <div class='row text-center'>
   <div class='col-md-2'></div>
   <div class='col-md-4' id='to-eat'>
+    <h3>To Eat</h3>
+    <hr>
       {{#each toEat}}
         <p>{{sushi_name}}
           <button class="btn btn-success update-btn" sushi-id={{id}} devoured={{devoured}}><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
@@ -9,6 +11,8 @@
       {{/each}}
   </div>
   <div class='col-md-4' id='eaten'>
+    <h3>Eaten</h3>
+    <hr>
       {{#each eaten}}
         <p>{{sushi_name}}
           <button class="btn btn-warning update-btn" sushi-id={{id}} devoured={{devoured}}><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>

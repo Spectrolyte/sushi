@@ -22,7 +22,7 @@ $(function () {
             data: updateSushi,
             success: function (data) {
                 // console.log('devoured');
-                location.reload(true);
+                location.reload();
             }
         });
     });
@@ -36,7 +36,7 @@ $(function () {
             type: 'DELETE',
             data: deleteSushi,
             success: function (data) {
-                location.reload(true);
+                location.reload();
             }
         });
     });
